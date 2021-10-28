@@ -19,20 +19,32 @@ Para avaliar seu desempenho temos um desafio para você.
 Você deverá fazer um fork deste repositório, e desenvolver um relatório sobre a publicação de notícias. A aplicação deverá consumir a seguinte fonte de dados RSS [https://www.correio24horas.com.br/rss/] e entregar em formato JSON a quantidade e uma lista com o titulo (campo title) das notícias encontradas obedecendo dois critérios:
 
 ### Notícias publicadas hoje
-Exemplo de output:
-ˋˋˋ
-{
- “quantidade” : 4,
- “noticias”: [“Trabalho remoto monitorado”, “As aulas da B3 são 100% on-line e gravadas; confira como participar”,”Do jornalismo para a música: Luana Assiz lança clipe Espelho de Oxum”, “Em série do Globoplay, talentos se juntam para compor canção coletiva"]
+Exemplo de output
+```json
+{	
+	"quantidade": 4,
+	"noticias":["Trabalho remoto monitorado","As aulas da B3 são 100% on-line e gravadas; confira como participar","Do jornalismo para a música: Luana Assiz lança clipe Espelho de Oxum","Em série do Globoplay, talentos se juntam para compor canção coletiva"]
 }
-ˋˋˋ
+```
 
 ### Notícias filtradas por categoria
-Exemplo de output para *Noticias que pertençam a "categoria" "tecnoporto"*
-ˋˋˋ
+Exemplo de output para *Noticias que pertençam a **"categoria" "tecnoporto"**.* 
+```json
 {
-	 “quantidade” : 1,
-	 “noticias”: [“Trabalho remoto monitorado"]
+	"quantidade":1,
+	"noticias":["Trabalho remoto monitorado"]
 }
-ˋˋˋ
+```
+
+Você deve descrever no README.md do projeto Git suas decisões as decisões de implementação que forem relevantes, junto das instruções de como compilar (build) e executar a sua aplicação. Você pode utilizar bibliotecas de código aberto (open source) que acredite serem adequadas, mas por favor tente limitar o uso de ferramentas desnecessárias.
+
+## Critérios de Avaliação
+Organização
+Semântica
+Decisões Técnicas
+Ferramentas Utilizadas
+Desejável: Testes unitários
+
+ 
+
 
