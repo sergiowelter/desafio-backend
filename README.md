@@ -13,13 +13,6 @@ Conhecimento e habilidades em:
 ## Local
 Vaga 100% remota, empresa de Salvador/BA
 
-**Diferenciais:**
-Conhecimentos em:
-+ React 
-+ Docker
-+ Linux
-+ Microsserviços
-
 ## O desafio
 Para avaliar seu desempenho temos um desafio para você.
 
