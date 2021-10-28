@@ -36,7 +36,7 @@ Exemplo de output para *Noticias que pertençam a **"categoria" "tecnoporto"**.*
 }
 ```
 
-Você deve descrever no README.md do projeto Git suas decisões as decisões de implementação que forem relevantes, junto das instruções de como compilar (build) e executar a sua aplicação. Você pode utilizar bibliotecas de código aberto (open source) que acredite serem adequadas, mas por favor tente limitar o uso de ferramentas desnecessárias.
+Você deve descrever no README.md do projeto Git as decisões de implementação que forem relevantes, junto das instruções de como compilar (build) e executar a sua aplicação. Você pode utilizar bibliotecas de código aberto (open source) que acredite serem adequadas, mas por favor tente limitar o uso de ferramentas desnecessárias.
 
 ## Critérios de Avaliação
 + Organização
