@@ -5,8 +5,8 @@ window.addEventListener("load", function () {
     });
 });
 
-//função que busca as notícias
-function carregarJson(categoria = 0){
+//busca as notícias de hoje
+function carregarJson(categoria = "geral"){
     noticias = {};
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -23,7 +23,7 @@ function carregarJson(categoria = 0){
     request.send();
 }
 
-//função que busca as categorias das notícias de hoje
+//busca apenas as categorias
 function carregarCategorias() {
     categorias = {};
     var request = new XMLHttpRequest();
@@ -41,7 +41,7 @@ function carregarCategorias() {
     request.send();
 }
 
-//função que rende as notícias no HTML
+//rende as notícias no HTML
 function renderNoticias(items){
     var nhtml = "";
     $('#combo_json').empty();
@@ -50,12 +50,12 @@ function renderNoticias(items){
     $('#combo_json').append(nhtml);
 }
 
-//função que renderiza no HTML um campo select com as notícias de hoje
+//renderiza no HTML um campo select com as categorias
 function renderCategorias(items){
     var nhtml = "";
     $('#combo_select').empty();
 
-    nhtml = '<select name="filtro_categoria" id="categoria_id" onchange="filtrar()"><option>Selecione a categoria que deseja filtrar</option>';
+    nhtml = '<select name="filtro_categoria" id="categoria_id" onchange="filtrar()"><option value="geral">Selecione a categoria que deseja filtrar</option>';
     var i = 0;
     for (var count in items.categorias){
         i++;
@@ -69,9 +69,9 @@ function renderCategorias(items){
     $('#combo_select').append(nhtml);
 }
 
-//função que filtra as notícias pela categoria
+//filtra as notícias pela categoria
 function filtrar(){
-    var e = document.getElementById("categoria_id").value;
+    var categoria = document.getElementById("categoria_id").value;
 
-    carregarJson(e);
+    carregarJson(categoria);
 }

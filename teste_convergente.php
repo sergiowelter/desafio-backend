@@ -28,7 +28,7 @@ function retorno($obj, $today){
         $items =  $arr->channel->item;
         $i = 0; 
         $x = 0; 
-    
+        $quantidade = 0;
         $noticias = array();
         $categorias = array();
     
@@ -41,23 +41,22 @@ function retorno($obj, $today){
             $categoria = $item->category;
             $titulo = strval($titulo);
             $categoria = strval($categoria);
-    
-    
-            if($data === $today){
-                if(isset($_GET['filtro']) && $_GET['filtro'] != 0){
-                    if($categoria == $_GET['filtro']){
-                        $noticias[$i] = $titulo;
-                        $categorias[$i] = $categoria; 
-                        $i++;
-                    }
-                    
-                }else{
-                    $noticias[$x] = $titulo;
-                    $categorias[$x] = $categoria; 
-                    $x++;
+            if(isset($_GET['filtro']) and $_GET['filtro'] !== "geral"){
+                if($_GET['filtro'] == $categoria){
+                    $noticias[$i] = $titulo;
+                    $categorias[$i] = $categoria; 
+                    $i++;
+                    $quantidade = $i;
                 }
 
+            }else{
+                $noticias[$x] = $titulo;
+                $categorias[$x] = $categoria; 
+                $x++;
+                $quantidade = $x;
             }
+    
+
         }
 
         //se existir o valor "categorias" na url, a função retorna apenas as categorias
@@ -69,7 +68,7 @@ function retorno($obj, $today){
             return $obj;
         }
         
-        $obj->quantidade = $x;
+        $obj->quantidade = $quantidade;
         $obj->noticias = $noticias;
         
     
@@ -82,8 +81,4 @@ function retorno($obj, $today){
     return $obj;
     
 }
-
-
-
-//echo json_encode($json, JSON_UNESCAPED_SLASHES);
 ?>
